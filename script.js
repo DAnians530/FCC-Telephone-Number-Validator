@@ -13,6 +13,10 @@ function telephoneCheck(str) {
                 return true;
             }
             
+        if ((testStr.match(/-/g) || []).length > 2 || (testStr.match(/\(/g) || []).length === 1 || (testStr.match(/\)/g) || []).length === 1) {
+                return false;
+            }
+        
         if (testStr.indexOf("(") === 0 || testStr.indexOf("(") === 1) {
             if (testStr[testStr.indexOf("(") + 4] === ")" && testStr[testStr.indexOf("(") + 8] === "-") {
                 return true;
