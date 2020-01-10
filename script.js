@@ -13,8 +13,12 @@ function telephoneCheck(str) {
                 return true;
             }
             
-        if ((testStr.match(/-/g) || []).length > 2 || (testStr.match(/\(/g) || []).length === 1 || (testStr.match(/\)/g) || []).length === 1) {
+        if ((testStr.match(/-/g) || []).length > 2) {
                 return false;
+            }
+
+        if ((testStr.match(/\(/g) || []).length !== (testStr.match(/\)/g) || []).length) {
+            return false;
             }
         
         if (testStr.indexOf("(") === 0 || testStr.indexOf("(") === 1) {
